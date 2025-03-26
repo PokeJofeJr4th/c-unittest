@@ -1,6 +1,7 @@
 #include "unittest.h"
 
 #include <stdio.h>
+#include <string.h>
 
 int test_main();
 
