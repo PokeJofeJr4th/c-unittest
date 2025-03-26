@@ -19,6 +19,18 @@ int unittest_assert(int condition, char *name, char *file, int line)
     return condition;
 }
 
+int unittest_assert_str(char *a, char *b, char *name, char *file, int line)
+{
+    UNITTEST_TEST_NUM++;
+    if (strcmp(a, b) == 0)
+    {
+        return 1;
+    }
+    UNITTEST_FAILURES++;
+    fprintf(stderr, "Test #%i: %s Failed at %s:%i; \"%s\" != \"%s\"", UNITTEST_TEST_NUM, name, file, line, a, b);
+    return 0;
+}
+
 int main()
 {
     int test_result = test_main();
